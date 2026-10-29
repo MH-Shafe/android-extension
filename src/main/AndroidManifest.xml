@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Required permissions to run local bridge server and communicate over loopback -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:label="@string/extension_name"
+        android:hasCode="true">
+
+        <!-- Declares this APK as a valid Mihon / Tachiyomi extension source -->
+        <meta-data
+            android:name="tachiyomi.extension.class"
+            android:value="eu.kanade.tachiyomi.extension.all.mangavisionbridge.MangaVisionBridge" />
+        <meta-data
+            android:name="tachiyomi.extension.factory"
+            android:value="" />
+        <meta-data
+            android:name="tachiyomi.extension.hasReadme"
+            android:value="0" />
+        <meta-data
+            android:name="tachiyomi.extension.hasChangelog"
+            android:value="0" />
+
+        <!-- Foreground Service that hosts the local HTTP & WebSocket bridge -->
+        <service
+            android:name=".BridgeForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+    </application>
+
+</manifest>

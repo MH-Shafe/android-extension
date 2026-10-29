@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="extension_name">Manga Vision Bridge</string>
+    <string name="bridge_notification_title">Manga Vision Bridge Active</string>
+    <string name="bridge_notification_content">Local server listening on port %1$d. Ready for web reader sync.</string>
+    <string name="pref_enable_server_title">Enable Bridge Server</string>
+    <string name="pref_enable_server_summary">Starts the local HTTP and WebSocket server for web application sync.</string>
+    <string name="pref_server_port_title">Server Port</string>
+    <string name="pref_server_port_summary">Default: 8765</string>
+    <string name="pref_pairing_pin_title">Pairing PIN</string>
+    <string name="pref_pairing_pin_summary">Enter this PIN in your web application to authenticate.</string>
+</resources>
